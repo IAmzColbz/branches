@@ -11,7 +11,7 @@ fn user_temp() -> f32 {
             Ok(num) => num,
             Err(_) => {
                 println!("Not a valid integer.");
-                continue
+                continue;
             }
         };
 
@@ -28,15 +28,14 @@ fn user_unit() -> char {
 
         let unit: char = match unit.trim().to_lowercase().parse() {
             Ok(char) => char,
-            Err(_) => continue
+            Err(_) => continue,
         };
 
         if unit == 'f' || unit == 'c' {
-            return unit
+            return unit;
         } else {
-            continue
+            continue;
         }
-        
     }
 }
 
@@ -53,8 +52,7 @@ fn convert(user_temp: f32, user_unit: char) -> (String, String) {
         let user_temp: String = user_temp.to_string();
         let temp_f: String = user_temp + "F";
 
-        return(temp_f, temp_c)
-
+        return (temp_f, temp_c);
     } else if user_unit == 'c' {
         let mut convert_to_f: f32 = user_temp;
         convert_to_f *= 1.8;
@@ -66,7 +64,7 @@ fn convert(user_temp: f32, user_unit: char) -> (String, String) {
         let user_temp: String = user_temp.to_string();
         let temp_c: String = user_temp + "C";
 
-        return(temp_f, temp_c)
+        return (temp_f, temp_c);
     } else {
         panic!("How tf did you get here")
     };
